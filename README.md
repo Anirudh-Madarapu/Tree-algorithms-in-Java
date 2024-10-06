@@ -1,6 +1,6 @@
 # Add Method
 
-Before first question, I implemented add method. I have made my method such that it attains perfect bianry tree.My add method works based on recursion. Whenever we add something using addValue or add method, the number of children count will go up by one. The add method recursively changes and points to a certain node until it hits the base cases. For example, if the node is 5th node, intutively it should go to right of 1st left node. The add method will decide this for us. By defauly, our add method points to head. First, as this is an odd number, 5%2 is 1, therefore, our pointer has to be moved to right, but this step will not be done until the recursion method hits the base cases. Therefore, this step(5%2 = 1, move to right) will be added to stack until base step gets hit. The 5/2(5/2 = 2) will be passed into the same method. 2 is the base case. Therefore, our pointer will move to left from the head. Next, the recusive step that has been staying in stack will be executed. Which means, our pointer will now move to right from its previous postion. If we look at the trajectory of our node, first it has been moved to left. Second, it has been to right. The add method also increases numChild count of every node that it passes through while recursive travel step.
+ I implemented add method. I have made my method such that it attains perfect bianry tree.My add method works based on recursion. Whenever we add something using addValue or add method, the number of children count will go up by one. The add method recursively changes and points to a certain node until it hits the base cases. For example, if the node is 5th node, intutively it should go to right of 1st left node. The add method will decide this for us. By defauly, our add method points to head. First, as this is an odd number, 5%2 is 1, therefore, our pointer has to be moved to right, but this step will not be done until the recursion method hits the base cases. Therefore, this step(5%2 = 1, move to right) will be added to stack until base step gets hit. The 5/2(5/2 = 2) will be passed into the same method. 2 is the base case. Therefore, our pointer will move to left from the head. Next, the recusive step that has been staying in stack will be executed. Which means, our pointer will now move to right from its previous postion. If we look at the trajectory of our node, first it has been moved to left. Second, it has been to right. The add method also increases numChild count of every node that it passes through while recursive travel step.
 For example, when 5 is added, the numChildren attribute of node 1 and node 2 will get incremented by 1. For example, before 5 was added, number of children for head was 3. After 5 has been added number of children for head will be 4. Same goes for node 2.
 
                          (1)
@@ -25,8 +25,6 @@ For example, when 5 is added, the numChildren attribute of node 1 and node 2 wil
 
       O(n)
 
-
-# For Second Question
 
 # depth() method
 
@@ -139,13 +137,11 @@ The leastCommonSubsumer() method uses findPath() method that we discusses in one
                      /   \
                     (54)   (67)
 
-# For second Question
 
-For the second question, I drew various types of trees in the class called treeInstances.java. Please refer that class to see all the diagrams and implementation of my trees.
+I drew various types of trees in the class called treeInstances.java. Please refer that class to see all the diagrams and implementation of my trees.
 
-# For third question
 
-For the third question, I wrote methods called inorder, preorder, and postorder. For every type of traversal, we need to pass a node. For every method, I passed head of the tree.
+ I wrote methods called inorder, preorder, and postorder. For every type of traversal, we need to pass a node. For every method, I passed head of the tree.
 
    Post order:
 
@@ -183,9 +179,8 @@ For the third question, I wrote methods called inorder, preorder, and postorder.
             /    \  /     \      /   \
            (8) (9) (10)  (11)  (12) (13)
 
-  # For question 4
 
-  For question 4, I have used a nest while loops. The key idea here, as bose told me, is pointers. There has to be a way to come back to the node that we have visited. First we will set two pointers, temp and temp2. One pointer will by default will point to head and other pointer is just a node. We will instantitate a while loop here. The while loop will iteratively go through the tree. The temp will point to head initially, whereas for temp2 the method will go left of temp and then go keep on go till right until the right child is null. Once the right child is null, we will make point temp2's right child to temp. This way we still have a way to come to our head. If temp2's right is same as temp, we will check if temp's left is null. If its not, we go to left of the temp child. We continue the same process until temp's left is null. Once we reach temp's left equals null, that means we have come to left most node of the tree. We will return the value of this node and go to right. You might be wondering that there is no right child to last child. However, as we have been establsihing connection between temp and temp2, we can go back to parent. We will return the parent and remove temp2's connection with temp. Now, we will go to right tree and do the same process until we reach the right most node of the tree.
+I have used a nest while loops. The key idea here, as bose told me, is pointers. There has to be a way to come back to the node that we have visited. First we will set two pointers, temp and temp2. One pointer will by default will point to head and other pointer is just a node. We will instantitate a while loop here. The while loop will iteratively go through the tree. The temp will point to head initially, whereas for temp2 the method will go left of temp and then go keep on go till right until the right child is null. Once the right child is null, we will make point temp2's right child to temp. This way we still have a way to come to our head. If temp2's right is same as temp, we will check if temp's left is null. If its not, we go to left of the temp child. We continue the same process until temp's left is null. Once we reach temp's left equals null, that means we have come to left most node of the tree. We will return the value of this node and go to right. You might be wondering that there is no right child to last child. However, as we have been establsihing connection between temp and temp2, we can go back to parent. We will return the parent and remove temp2's connection with temp. Now, we will go to right tree and do the same process until we reach the right most node of the tree.
 
   To get better picture of the method(), we will consider the follwing example.
 
@@ -218,9 +213,7 @@ For the third question, I wrote methods called inorder, preorder, and postorder.
 
 
 
-  # For question 5
-
-  For question 5, I have used a method called isSumTree(). When isSumTree() is called, it will call the sum() method of the Node which takes in an integer and a node. The sum() is similar to post order traversal, the only difference in sum is that we are adding the values of the node to the given integer parameter rather than printing them out. The sum method returns the passed parameter(Integer). The returned Integer value has sum of all nodes of the tree including the head. Therefore once the sum is returned we will subract head value from the sum and see if the sum is equal to head.
+I have used a method called isSumTree(). When isSumTree() is called, it will call the sum() method of the Node which takes in an integer and a node. The sum() is similar to post order traversal, the only difference in sum is that we are adding the values of the node to the given integer parameter rather than printing them out. The sum method returns the passed parameter(Integer). The returned Integer value has sum of all nodes of the tree including the head. Therefore once the sum is returned we will subract head value from the sum and see if the sum is equal to head.
 
   Consider the following Tree, the sum will do an preorder traversal of the tree and add all values to the Integer sum. In this case, sum is 60. But this sum also includes headValue. Therefore, we will subtract headvalue() from the sum which give 30. We will check if 30 is equal to head value. If it is equal, we will return true. Else, we will return false.
 
